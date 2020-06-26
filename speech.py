@@ -42,3 +42,8 @@ with sr.Microphone() as source:
             else:
                 ser=serial.Serial('/dev/ttyACMO',9600)
                 ser.write("2".encode())
+
+        except sr.UnknownValueError:
+            print("Can't identify the voice command")
+        except sr.RequestError as e:
+            print("could not request results; {0}".format(e))
