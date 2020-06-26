@@ -18,3 +18,27 @@ with sr.Microphone() as source:
                 print("okay")
                 ser=serial.Serial('/dev/ttyACMO',9600)
                 ser.write("7".encode())
+
+            if r.recognize_google(audio)==("backward"):
+                print("okay")
+                ser=serial.Serial('/dev/ttyACMO',9600)
+                ser.write("6".encode())
+
+            if r.recognize_google(audio)==("left"):
+                print("okay")
+                ser=serial.Serial('/dev/ttyACMO',9600)
+                ser.write("5".encode())
+
+            if r.recognize_google(audio)==("right"):
+                print("okay")
+                ser=serial.Serial('/dev/ttyACMO',9600)
+                ser.write("4".encode())
+
+            if r.recognize_google(audio)==("stop"):
+                print("okay")
+                ser=serial.Serial('/dev/ttyACMO',9600)
+                ser.write("3".encode())
+
+            else:
+                ser=serial.Serial('/dev/ttyACMO',9600)
+                ser.write("2".encode())
